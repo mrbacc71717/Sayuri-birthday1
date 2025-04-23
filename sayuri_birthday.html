@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Sayuri!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Dancing Script', cursive;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Home Section */
+        #home {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #1b263b, #3c096c);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #fff;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .text {
+            font-size: 4rem;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(147, 112, 219, 0.5);
+            animation: fadeInOut 4s ease-in-out infinite, glow 2s ease-in-out infinite;
+        }
+
+        .sayuri {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4.5rem;
+            color: #ffd700;
+        }
+
+        .heart {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2.5rem;
+            color: #ff4d4d;
+            animation: heartbeat 1s ease infinite;
+        }
+
+        .sparkle {
+            position: absolute;
+            font-size: 1.5rem;
+            color: #ffd700;
+            animation: sparkle 3s ease-in-out infinite;
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(147, 112, 219, 0.5); }
+            50% { text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(147, 112, 219, 0.8); }
+        }
+
+        @keyframes heartbeat {
+            0% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.3); }
+            100% { transform: translateX(-50%) scale(1); }
+        }
+
+        @keyframes sparkle {
+            0% { transform: rotate(0deg) scale(1); opacity: 0.8; }
+            50% { transform: rotate(180deg) scale(1.5); opacity: 1; }
+            100% { transform: rotate(360deg) scale(1); opacity: 0.8; }
+        }
+
+        /* Message Section */
+        #message {
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #2a2a72, #009ffd);
+            text-align: center;
+        }
+
+        #message h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .typewriter {
+            font-size: 1.5rem;
+            color: #fff;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid #fff;
+            animation: typing 6s steps(40, end) infinite, blink 0.75s step-end infinite;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
+        @keyframes typing {
+            0% { width: 0; }
+            50% { width: 100%; }
+            100% { width: 0; }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        /* Gallery Section */
+        #gallery {
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            text-align: center;
+        }
+
+        #gallery h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            padding: 20px;
+            background: #1b263b;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .text { font-size: 2.5rem; }
+            .sayuri { font-size: 3rem; }
+            #message h2, #gallery h2 { font-size: 2rem; }
+            .typewriter { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Home Section -->
+    <section id="home">
+        <div class="stars" id="stars"></div>
+        <div class="container">
+            <div class="heart">❤️</div>
+            <div class="text">Happy Birthday, <span class="sayuri">Sayuri</span>!</div>
+            <div class="sparkle" style="top: -10px; left: 20%;">✨</div>
+            <div class="sparkle" style="top: 10px; right: 20%;">✨</div>
+            <div class="sparkle" style="bottom: -10px; left: 30%;">✨</div>
+            <div class="sparkle" style="bottom: 0; right: 30%;">✨</div>
+        </div>
+    </section>
+
+    <!-- Message Section -->
+    <section id="message">
+        <h2>A Special Message for You</h2>
+        <div class="typewriter">Sayuri, you light up my world every day. Here's to celebrating you! 💖</div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <h2>Our Memories</h2>
+        <div class="gallery-grid">
+            <img src="https://via.placeholder.com/300x200.png?text=Memory+1" alt="Memory 1">
+            <img src="https://via.placeholder.com/300x200.png?text=Memory+2" alt="Memory 2">
+            <img src="https://via.placeholder.com/300x200.png?text=Memory+3" alt="Memory 3">
+            <img src="https://via.placeholder.com/300x200.png?text=Memory+4" alt="Memory 4">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        Made with 💕 for Sayuri
+    </footer>
+
+    <script>
+        // Add twinkling stars
+        const starContainer = document.getElementById('stars');
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.animationDelay = `${Math.random() * 3}s`;
+            starContainer.appendChild(star);
+        }
+    </script>
+</body>
+  </html>
